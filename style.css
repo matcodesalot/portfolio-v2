@@ -344,63 +344,53 @@ section {
 
 .projects {
     background-color: var(--bg-color);
-    color: black;
 }
 
-.projects h2 {
-    color: var(--text-color);
-}
-
-.projects-container {
+.projects-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    margin: 5rem 0;
+    gap: 3rem;
+    row-gap: 5rem;
 }
 
-.project-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--main-color);
+.project-card {
     height: 600px;
-    border-radius: 3rem;
-    transition: 0.4s ease-in-out;
-}
-
-.project-box:hover {
-    background-color: var(--second-bg-color);
-    /* border: 5px solid var(--main-color); */
-    transform: scale(1.03);
-}
-
-.project-info {
+    max-width: 450px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--main-color);
+    border-radius: 5rem;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
     align-items: center;
-    padding: 5rem;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 5rem 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--main-color);
+    transition: 0.4s ease;
 }
 
-.project-info img {
+.project-card:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    transform: scale(1.02);
+}
+
+.project-card img {
     max-width: 18vw;
     object-fit: cover;
-    border-radius: 3rem;
 }
 
-.project-info h4 {
-    font-size: 4rem;
-    margin: 2rem 0;
-    font-weight: 800;
-    color: var(--text-color);
+.project-card h3 {
+    font-size: 3rem;
 }
 
-.project-info p {
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.7;
-    color: var(--text-color);
+.project-card p {
+    font-size: 1.6rem;
 }
 
 .contact {
@@ -587,5 +577,35 @@ form textarea {
 
     .home-img img {
         width: 56vw;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about h2 {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .about img {
+        width: 56vw;
+    }
+
+    .projects-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-box img {
+        min-width: 42rem;
+    }
+
+    .contact {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
